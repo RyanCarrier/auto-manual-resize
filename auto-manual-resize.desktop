@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=auto-manual-resize
+Exec=/bin/sh -c "$HOME/.config/xrandr-resize-loop.sh"
+StartupNotify=false
+Terminal=false
