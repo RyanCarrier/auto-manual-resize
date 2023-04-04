@@ -4,7 +4,7 @@ Description=Watch xev events for window resize, xrandr auto the default display
 BindsTo=graphical.target
 
 [Service]
-ExecStart=~/.config/xrandr-resize-loop.sh
+ExecStart=/home/%u/.config/xrandr-resize-loop.sh
 Restart=always
 KillMode=process
 

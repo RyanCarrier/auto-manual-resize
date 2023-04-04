@@ -16,6 +16,7 @@ getIfMissing "$SCRIPT"
 getIfMissing "$SERVICE"
 
 echo "Moving files"
+mkdir -p ~/.config/systemd/user
 mv "$SCRIPT" ~/.config/
 mv "$SERVICE" ~/.config/systemd/user/
 echo "Starting service $SERVICE"
