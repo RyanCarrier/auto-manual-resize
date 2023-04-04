@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-SERVICE="auto-manual-resize.service"
+DESKTOPFILE="auto-manual-resize.desktop"
 SCRIPT="xrandr-resize-loop.sh"
 
 getIfMissing() {
@@ -13,11 +13,10 @@ getIfMissing() {
 }
 
 getIfMissing "$SCRIPT"
-getIfMissing "$SERVICE"
+getIfMissing "$DESKTOPFILE"
 
 echo "Moving files"
-mkdir -p ~/.config/systemd/user
+mkdir -p ~/.config/autostart
 mv "$SCRIPT" ~/.config/
-mv "$SERVICE" ~/.config/systemd/user/
-echo "Starting service $SERVICE"
-systemctl --user enable "$SERVICE" --now
+mv "$DESKTOPFILE" ~/.config/autostart/
+echo "Log out then back in to start the script"
