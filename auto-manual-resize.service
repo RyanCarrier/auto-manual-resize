@@ -1,12 +1,12 @@
 # systemd service file for xrandr-resize-loop.sh
 [Unit]
 Description=Watch xev events for window resize, xrandr auto the default display
-BindsTo=graphical-session.target
+BindsTo=graphical.target
 
 [Service]
-ExecStart=/usr/local/bin/xrandr-resize-loop.sh
+ExecStart=~/.config/xrandr-resize-loop.sh
 Restart=always
 KillMode=process
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

@@ -1,9 +1,5 @@
 #!/bin/sh
 set -e
-if [ "$(id -u)" -ne 0 ]; then
-    echo "Please run as root." >&2
-    exit 1
-fi
 
 SERVICE="auto-manual-resize.service"
 SCRIPT="xrandr-resize-loop.sh"
@@ -20,8 +16,7 @@ getIfMissing "$SCRIPT"
 getIfMissing "$SERVICE"
 
 echo "Moving files"
-mv "$SCRIPT" /usr/local/bin/
-mv "$SERVICE" /etc/systemd/system/
+mv "$SCRIPT" ~/.config/
+mv "$SERVICE" ~/.config/systemd/user/
 echo "Starting service $SERVICE"
-systemctl daemon-reload
-systemctl enable "$SERVICE" --now
+systemctl --user enable "$SERVICE" --now
