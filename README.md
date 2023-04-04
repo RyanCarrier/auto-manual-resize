@@ -6,7 +6,5 @@ Cause it automatically makes manual calls of auto
 
 ```bash
 curl "https://raw.githubusercontent.com/RyanCarrier/auto-manual-resize/master/install.sh" | sudo bash
-
-
 ```
 
